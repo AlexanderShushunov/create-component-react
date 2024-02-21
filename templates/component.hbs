@@ -1,5 +1,5 @@
 import cn from "classnames";
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 import styles from "./{{> ComponentName}}.pcss";
 
@@ -7,7 +7,7 @@ type Props = {
     prop: number;
     onClick?: () => void;
     className?: string;
-    children: React.ReactNode;
+    children: ReactNode;
 };
 
 export const {{> ComponentName}}: FC<Props> = ({
@@ -21,8 +21,8 @@ export const {{> ComponentName}}: FC<Props> = ({
             onClick={onClick}
             className={cn(styles.{{> CssClassName}}, className)}
         >
-          {prop}
-          {children}
+            {prop}
+            {children}
         </div>
     );
 };
