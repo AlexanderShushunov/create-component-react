@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { FC } from "react";
 
-import styles from "./{{pascalCase name}}.pcss";
+import styles from "./{{> ComponentName}}.pcss";
 
 type Props = {
   prop: number;
@@ -9,7 +9,7 @@ type Props = {
   className: string;
 };
 
-export const {{pascalCase name}}: FC<Props> = ({
+export const {{> ComponentName}}: FC<Props> = ({
   prop,
   onClick,
   className,
@@ -18,7 +18,7 @@ export const {{pascalCase name}}: FC<Props> = ({
   return (
     <div
         onClick={onClick}
-        className={cn(styles.{{camelCase name}}, className)}
+        className={cn(styles.{{> CssClassName}}, className)}
     >
       {prop}
       {children}

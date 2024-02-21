@@ -1,8 +1,8 @@
 import type { Story } from "@storybook/react";
 
-import { {{pascalCase name}} } from "./{{pascalCase name}}";
+import { {{> ComponentName}} } from "./{{> ComponentName}}";
 
-export const {{pascalCase name}}Story: Story<{
+export const {{> ComponentName}}Story: Story<{
     prop: number;
     onClick: () => void;
 }> = ({
@@ -19,26 +19,26 @@ export const {{pascalCase name}}Story: Story<{
                 border: "1px solid red",
             }}
         >
-            <{{pascalCase name}}
+            <{{> ComponentName}}
                 prop={prop}
                 onClick={onClick}
             >
                 <div>child</div>
-            </{{pascalCase name}}>
+            </{{> ComponentName}}>
         </div>
     );
 };
 
-{{pascalCase name}}Story.args = {
+{{> ComponentName}}Story.args = {
     prop: 100500,
 };
 
-{{pascalCase name}}Story.argTypes = {
+{{> ComponentName}}Story.argTypes = {
     onClick: { action: "click" },
 };
 
-{{pascalCase name}}Story.storyName = "{{pascalCase name}}";
+{{> ComponentName}}Story.storyName = "{{> ComponentName}}";
 
 export default {
-    title: "{{pascalCase name}}",
+    title: "{{> ComponentName}}",
 };

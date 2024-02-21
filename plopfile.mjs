@@ -1,6 +1,8 @@
 import path from 'node:path';
 
 export default function (plop) {
+  plop.setPartial('ComponentName', '{{pascalCase name}}');
+  plop.setPartial('CssClassName', '{{camelCase name}}');
   // controller generator
   plop.setGenerator('controller', {
     description: 'generate component',
@@ -11,23 +13,23 @@ export default function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.tsx'),
+      path: getFullPath('{{> ComponentName}}', '{{> ComponentName}}.tsx'),
       templateFile: 'templates/component.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{pascalCase name}}', 'index.tsx'),
+      path: getFullPath('{{> ComponentName}}', 'index.tsx'),
       templateFile: 'templates/index.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.pcss'),
+      path: getFullPath('{{> ComponentName}}', '{{> ComponentName}}.pcss'),
       templateFile: 'templates/style.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.pcss.d.ts'),
+      path: getFullPath('{{> ComponentName}}', '{{> ComponentName}}.pcss.d.ts'),
       templateFile: 'templates/style.d.ts.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.story.tsx'),
+      path: getFullPath('{{> ComponentName}}', '{{> ComponentName}}.story.tsx'),
       templateFile: 'templates/story.hbs'
     }]
   });
