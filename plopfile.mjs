@@ -3,28 +3,32 @@ import path from 'node:path';
 export default function (plop) {
   // controller generator
   plop.setGenerator('controller', {
-    description: 'generat component',
+    description: 'generate component',
     prompts: [{
       type: 'input',
       name: 'name',
       message: 'component name'
-    },{
-      type: 'confirm',
-      name: 'className',
-      message: 'add className'
     }],
     actions: [{
       type: 'add',
-      path: getFullPath('{{name}}', '{{name}}.tsx'),
+      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.tsx'),
       templateFile: 'templates/component.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{name}}', 'index.tsx'),
+      path: getFullPath('{{pascalCase name}}', 'index.tsx'),
       templateFile: 'templates/index.hbs'
     }, {
       type: 'add',
-      path: getFullPath('{{name}}', 'style.css'),
+      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.pcss'),
       templateFile: 'templates/style.hbs'
+    }, {
+      type: 'add',
+      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.pcss.d.ts'),
+      templateFile: 'templates/style.d.ts.hbs'
+    }, {
+      type: 'add',
+      path: getFullPath('{{pascalCase name}}', '{{pascalCase name}}.story.tsx'),
+      templateFile: 'templates/story.hbs'
     }]
   });
 };

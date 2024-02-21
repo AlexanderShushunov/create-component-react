@@ -1,0 +1,44 @@
+import type { Story } from "@storybook/react";
+
+import { {{pascalCase name}} } from "./{{pascalCase name}}";
+
+export const {{pascalCase name}}Story: Story<{
+    prop: number;
+    onClick: () => void;
+}> = ({
+    prop,
+    onClick,
+}) => {
+    return (
+        <div
+            style=\{{
+                resize: "both",
+                overflow: "auto",
+                height: "300px",
+                margin: "40px",
+                border: "1px solid red",
+            }}
+        >
+            <{{pascalCase name}}
+                prop={prop}
+                onClick={onClick}
+            >
+                <div>child</div>
+            </{{pascalCase name}}>
+        </div>
+    );
+};
+
+{{pascalCase name}}Story.args = {
+    prop: 100500,
+};
+
+{{pascalCase name}}Story.argTypes = {
+    onClick: { action: "click" },
+};
+
+{{pascalCase name}}Story.storyName = "{{pascalCase name}}";
+
+export default {
+    title: "{{pascalCase name}}",
+};

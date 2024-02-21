@@ -1,21 +1,27 @@
-import { h, FunctionComponent } from 'preact';
+import cn from "classnames";
+import { FC } from "react";
 
-import style from './style.css';
+import styles from "./{{pascalCase name}}.pcss";
 
 type Props = {
-{{#if className}}
+  prop: number;
+  onClick?: () => void;
   className: string;
-{{/if}}
 };
 
-export const {{name}}: FunctionComponent<Props> = ({children{{#if className}}, className{{/if~}} }) => (
-  <div class={
-    {{#if className}}
-       `${style.{{name~}} } ${className}`
-    {{else}}
-       style.{{name}}
-    {{/if}}
-  }>
-    {children}
-  </div>
-);
+export const {{pascalCase name}}: FC<Props> = ({
+  prop,
+  onClick,
+  className,
+  children,
+}) => {
+  return (
+    <div
+        onClick={onClick}
+        className={cn(styles.{{camelCase name}}, className)}
+    >
+      {prop}
+      {children}
+    </div>
+  );
+};
