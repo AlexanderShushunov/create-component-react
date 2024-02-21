@@ -7,9 +7,9 @@
     "url": "https://github.com/AlexanderShushunov/create-component-react"
   },
   "keywords": [
-    "preact",
+    "react",
     "generator",
-    "holyjs"
+    "storybook"
   ],
   "author": "Alexandr Shushunov",
   "license": "MIT",
